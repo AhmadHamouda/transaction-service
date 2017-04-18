@@ -40,7 +40,7 @@ public class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-//            .groupName(groupName)
+                .groupName(groupName)
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.n26.assignment"))
