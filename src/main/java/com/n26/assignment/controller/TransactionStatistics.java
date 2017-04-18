@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 /**
  * Created by Ahmad on 4/15/2017.
  */
@@ -21,7 +23,7 @@ public class TransactionStatistics {
     @ApiOperation(value = "Add transaction", notes = "called every time with new transaction.")
     @RequestMapping(value = "/transactions", method = {RequestMethod.POST})
     @ResponseStatus(HttpStatus.CREATED)
-    public void addTransaction(@RequestBody Transaction transaction) {
+    public void addTransaction(@RequestBody @Valid Transaction transaction) {
         transactionService.addTransaction(transaction);
     }
 

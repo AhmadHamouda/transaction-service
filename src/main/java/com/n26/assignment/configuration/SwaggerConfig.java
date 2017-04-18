@@ -2,7 +2,7 @@ package com.n26.assignment.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -12,10 +12,10 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @author Ahmad Hamouda on 2/24/17.
+ * @author Ahmad Hamouda on 4/15/17.
  */
 
-@Controller
+@Configuration
 @EnableSwagger2
 public class SwaggerConfig {
     @Value("${swagger.group.name}")
@@ -38,14 +38,13 @@ public class SwaggerConfig {
     private String version;
 
     @Bean
-    public Docket fcaApi() {
+    public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName(groupName)
+//            .groupName(groupName)
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.n26.assignment"))
                 .paths(PathSelectors.any())
-//                .paths(regex(pathsRegex))
                 .build();
     }
 

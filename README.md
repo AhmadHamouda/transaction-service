@@ -1,6 +1,6 @@
 # Transactions Services Statistics
 
-The service is to calculate realtime statistic from the last 60 seconds.
+The service is to calculate real time statistic from the last 60 seconds.
 
 ## Transactions Services Statistics API:
 
@@ -15,7 +15,7 @@ For Development purpose Application provide Swagger-ui interface which can acces
 
 ## Business assumption covered by exist code:
 
-1) If old transaction out of the 60 seconds interval scope [old or future] it will reject from the everytime API and return 204.
+1) If old transaction out of the 60 seconds interval scope [old or future] it will reject from the every time API and return 204.
 
 3) Schedule Job run to delete old transactions
 
@@ -26,7 +26,7 @@ For Development purpose Application provide Swagger-ui interface which can acces
 3) Crone job each 1 second work to remove obsolete second transaction and update Statistic result
 4) When user ask for statistic return result direct from him
 5) This solution work on time O(61)=O(1) and constant memory also O(1)
-6) Reason to modify my solution and use this approache is Simplicity and Scale-out 
+6) Reason to modify my solution and use this approach is Simplicity and Scale-out 
 
 **Future Add**
 
@@ -35,7 +35,7 @@ We can Scale-out the solution by duplicate the server and make all of them flush
 **Note**
 
 1) I worked on 1 second as latency for my system update in the worst case, we can enhance this time by increase the period but need to measure the calculation computing time for the application to make meaning.
-2) We can decide to calculate the Total statistics with each request not with the crone job but I deepend on bussiness case dose it worth or needed or call it in both crone and get statistics result.
+2) We can decide to calculate the Total statistics with each request not with the crone job but I depend on business case dose it worth or needed or call it in both crone and get statistics result.
 
 **First system solution idea [partially founded in the first commit]:**
 
@@ -82,12 +82,12 @@ Response
   "count": 0
 }
 ```
-## Development requirment:
+## Development requirement:
 
 1) JDK 8
 
 
-## Deployment requirment:
+## Deployment requirement:
 
 1) JRE 8
 
@@ -102,6 +102,6 @@ Response
 
 ## Testing Application
 
-1) Use swagger ui for test Anonymous user functionality [http://localhost:8060/swagger-ui.html]
+1) Use swagger ui for test functionality [http://localhost:8060/swagger-ui.html]
 
- 
+2) Use Postman or any RESTful APIs tool.
