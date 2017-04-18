@@ -102,6 +102,6 @@ Response
 
 ## Testing Application
 
-1) Use swagger ui for test Anonymous user functionality [http://localhost:8060/swagger-ui.html]
+1) Use Postman or any RESTful APIs tool.
 
  
